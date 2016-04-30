@@ -4,6 +4,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.application.Application;
+import javafx.embed.swing.SwingNode;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import javafx.scene.Group;
@@ -25,10 +26,11 @@ import static java.lang.Math.random;
 import java.lang.reflect.Field;
 import java.util.Scanner;
 
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-
+import javax.swing.SwingUtilities;
 
 public class Main extends Application { //creates a public class known as Main and inherits the objects and methods of the Application class.
 	@Override //override Main
@@ -40,9 +42,13 @@ public class Main extends Application { //creates a public class known as Main a
 		a = JOptionPane.showInputDialog ( "How many objects do you want in your screen-saver?" ); //www.compsci.ca
         
 		int numberofboxes = Integer.parseInt (a); 
-        		
+		
+		 
+		
+		
         
-        	
+		
+		
         	
 		
 		
