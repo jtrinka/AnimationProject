@@ -22,9 +22,11 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.StrokeType;
 import static java.lang.Math.random;
 
+import java.lang.reflect.Field;
 import java.util.Scanner;
 
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 
 
@@ -35,12 +37,16 @@ public class Main extends Application { //creates a public class known as Main a
 		
 		Scanner scan = new Scanner(System.in);
 		String a;
-		a = JOptionPane.showInputDialog ( "put your message here" ); 
+		a = JOptionPane.showInputDialog ( "How many objects do you want in your screen-saver?" ); //www.compsci.ca
         
 		int numberofboxes = Integer.parseInt (a); 
         		
-        		
-			Group root = new Group(); //create a new Group called root. This is the parent node.
+        
+        	
+        	
+		
+		
+			Group root = new Group(); //create a new Group called root. This is the parent node. This is a container
 			 Scene scene = new Scene(root, 800, 600, Color.WHITE); //create a new scene interface for the group root parent node. Make it 800 pixels by 600 pixels and make it black
 		        primaryStage.setScene(scene); //Construct the primary stage using the platform and set it as scene.
 		        
@@ -80,9 +86,14 @@ public class Main extends Application { //creates a public class known as Main a
 		        	            new Stop(1, Color.BLUE),}));
 		        	colors.widthProperty().bind(scene.widthProperty()); //adjust the size of the gradient to the width of the size of the scene.
 		        	colors.heightProperty().bind(scene.heightProperty());//adjust the size of the gradient to the height of the size of the scene.
+		        	
+		        	
+		        	
+		        	
+		        	
 		        	Group blendModeGroup = 
 		        		    new Group(new Group(new Rectangle(scene.getWidth(), scene.getHeight(),
-		        		        Color.WHITE), polys), colors); //create a new Group called blendModeGroup that incorporates the rectangle, circls, and colors gradient
+		        		        Color.RED), polys), colors); //create a new Group called blendModeGroup that incorporates the rectangle, circls, and colors gradient
 		        		colors.setBlendMode(BlendMode.OVERLAY); // blend the circles, colors, and rectangle together
 		        		root.getChildren().add(blendModeGroup); //add these new blended objects to the scene as a child of the root node.
 		        		
